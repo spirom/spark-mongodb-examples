@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-mongodb-examples.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-mongodb-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spark-mongodb-examples-build.iml" filepath="$PROJECT_DIR$/.idea/modules/spark-mongodb-examples-build.iml" />
     </modules>
   </component>
 </project>
