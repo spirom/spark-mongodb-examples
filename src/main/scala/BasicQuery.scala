@@ -31,7 +31,7 @@ object BasicQuery {
 
       recs.foreach(dbo => {
         val mdbo = new MongoDBObject(dbo)
-        println("custid = " + mdbo.getAs[String]("custid") + " #orders = " + dbo.getAs[Seq[MongoDBObject]]("orders").get.size)
+        println("custid = " + mdbo.getAs[String]("custid") + " #orders = " + dbo.getAs[Seq[MongoDBObject]]("orders").map(_.size))
       })
 
 
