@@ -1,7 +1,8 @@
 
+import com.mongodb.DBObject
+import com.mongodb.casbah.Imports._
 import nsmc._
 
-import com.mongodb.casbah.commons.MongoDBObject
 import org.apache.spark.{SparkContext, SparkConf}
 
 object BasicQuery {
@@ -17,10 +18,25 @@ object BasicQuery {
       case _ => coreConf
     }
     val sc = new SparkContext(conf)
-    val data = sc.mongoCollection[MongoDBObject](DBConfig.testDatabase, DBConfig.testCollection)
 
-    data.collect().foreach(mdbo => {
-      println("custid = " + mdbo("custid"))
-    })
+    try {
+
+      val data = sc.mongoCollection[DBObject](DBConfig.testDatabase, DBConfig.testCollection)
+
+      println(data.count())
+
+      val recs = data.collect()
+
+      println(recs.count(_ => true))
+
+      recs.foreach(dbo => {
+        val mdbo = new MongoDBObject(dbo)
+        println("custid = " + mdbo.getAs[String]("custid") + " #orders = " + dbo.getAs[Seq[MongoDBObject]]("orders").get.size)
+      })
+
+
+    } finally {
+      sc.stop()
+    }
   }
 }
