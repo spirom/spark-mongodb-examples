@@ -1,11 +1,24 @@
+import com.mongodb.ServerAddress
 import com.mongodb.casbah.Imports._
 
 object PopulateTestCollection {
   def main (args: Array[String]): Unit = {
-    val mongoClient = MongoClient(DBConfig.host, DBConfig.port.toInt)
+
+    val mongoClient =
+      (DBConfig.userName, DBConfig.password) match {
+        case (Some(u), Some(pw)) => {
+          val server = new ServerAddress(DBConfig.host, DBConfig.port.toInt)
+          val credentials =
+            MongoCredential.createMongoCRCredential(u, DBConfig.testDatabase, pw.toCharArray)
+          MongoClient(server, List(credentials))
+        }
+        case _ => MongoClient(DBConfig.host, DBConfig.port.toInt)
+      }
+
     val db = mongoClient.getDB(DBConfig.testDatabase)
 
     try {
+      DBConfig.printConfig()
       val col = db(DBConfig.testCollection)
       col.drop()
 
@@ -27,6 +40,7 @@ object PopulateTestCollection {
           MongoDBObject("orderid" -> "1000005") ++ ("itemid" -> "A060") ++ ("quantity" -> 12)
         ))
 
+      println("finished populating collection")
     } finally {
       mongoClient.close()
     }

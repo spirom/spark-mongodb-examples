@@ -7,6 +7,7 @@ import org.apache.spark.{SparkContext, SparkConf}
 
 object BasicQuery {
   def main (args: Array[String]) {
+    DBConfig.printConfig()
     val coreConf =
       new SparkConf()
         .setAppName("MongoReader").setMaster("local[4]")
@@ -23,18 +24,14 @@ object BasicQuery {
 
       val data = sc.mongoCollection[DBObject](DBConfig.testDatabase, DBConfig.testCollection)
 
-      println(data.count())
-
-      val recs = data.collect()
-
-      println(recs.count(_ => true))
-
-      recs.foreach(dbo => {
+      data.foreach(dbo => {
+        // may be more convenient to wrap the DBObject in a MongoDBObject for easier access
+        // (but not strictly necessary)
         val mdbo = new MongoDBObject(dbo)
         println("custid = " + mdbo.getAs[String]("custid") + " #orders = " + dbo.getAs[Seq[MongoDBObject]]("orders").map(_.size))
       })
 
-
+      println("done")
     } finally {
       sc.stop()
     }
