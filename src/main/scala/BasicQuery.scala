@@ -1,5 +1,4 @@
 
-import com.mongodb.DBObject
 import com.mongodb.casbah.Imports._
 import nsmc._
 
