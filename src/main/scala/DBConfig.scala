@@ -3,7 +3,7 @@ object DBConfig {
 
   // replace the following with the right values for your MongoDB installation
   val host = "localhost"
-  val port = "27030" //27017"
+  val port = "27017"
   val testDatabase = "test"
   val testCollection = "scratch"
 
