@@ -128,7 +128,7 @@
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020:orbit" level="project" />
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016:orbit" level="project" />
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645:orbit" level="project" />
-	<orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233:jar" level="project" />
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020:jar" level="project" />
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.servlet:3.0.0.v201112011016:jar" level="project" />
     <orderEntry type="library" name="SBT: org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645:jar" level="project" />
@@ -168,5 +168,8 @@
     <orderEntry type="library" name="SBT: stax:stax-api:1.0.1:jar" level="project" />
     <orderEntry type="library" name="SBT: xmlenc:xmlenc:0.52:jar" level="project" />
     <orderEntry type="library" name="jetty-servlet-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" name="SBT: commons-net:commons-net:3.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scalap:2.10.4:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.5:jar" level="project" />
   </component>
 </module>
