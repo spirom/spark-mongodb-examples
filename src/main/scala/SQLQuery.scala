@@ -28,11 +28,29 @@ object SQLQuery {
         |OPTIONS (db '${DBConfig.testDatabase}', collection '${DBConfig.testCollection}')
       """.stripMargin)
 
-      println("*** Query 1: everything")
-      val data =
+      println("*** Query 1: Everything")
+      val data1 =
         sqlContext.sql("SELECT * FROM dataTable")
-      data.schema.printTreeString()
-      data.foreach(println)
+      data1.schema.printTreeString()
+      data1.foreach(println)
+
+      println("*** Query 2: Test IS NOT NULL on a field")
+      val data2 =
+        sqlContext.sql("SELECT custid FROM dataTable WHERE discountCode IS NOT NULL")
+      data2.schema.printTreeString()
+      data2.foreach(println)
+
+      println("*** Query 3: Field of a structure that's not always present")
+      val data3 =
+        sqlContext.sql("SELECT custid, shippingAddress.zip FROM dataTable")
+      data3.schema.printTreeString()
+      data3.foreach(println)
+
+      println("*** Query 4: Group by field of a structure that's not always present")
+      val data4 =
+        sqlContext.sql("SELECT COUNT(custid), shippingAddress.zip FROM dataTable GROUP BY shippingAddress.zip")
+      data4.schema.printTreeString()
+      data4.foreach(println)
 
     } finally {
       sc.stop()
