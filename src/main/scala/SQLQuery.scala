@@ -1,7 +1,6 @@
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkContext, SparkConf}
-import nsmc.sql.MongoRelationProvider
 
 object SQLQuery {
   def main (args: Array[String]) {
