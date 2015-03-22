@@ -13,7 +13,13 @@ All you need is Scala 2.10, sbt 0.13 and a MongoDB installation in which you hav
 
 You need to edit the settings at the top of the `DBConfig` object to specify the connection details for your MongoDB server. 
 
-You can build and run the project either through the **IntelliJ** Idea IDE or via the **sbt** command line tool. An sbt target called **demo** is provided for both populating the collection and then querying it through Spark. To run from Idea, you can:
+You can build and run the project either through the **IntelliJ** Idea IDE or via the **sbt** command line tool. 
+
+### To run from sbt
+
+An **sbt** target called **demo** is provided for both populating the collection and then querying it through Spark. It runs the `main()` methods of the objects below in the given order. 
+
+### To run from Idea
 
 * First run the `main()` method of the `PopulateTestCollection` to pupulate the `scratch` collection.
 * Demonstrate basic RDD integration by running the `main()` method of the `BasicQuery` object.
@@ -23,7 +29,13 @@ You can build and run the project either through the **IntelliJ** Idea IDE or vi
     * The `custid` and `shippingAddress.zip` of every document, even though some don't have a `shippingAddress`.
     * The count of `custid` for each `shippingAddress.zip`, again even though some don't have a `shippingAddress`.
 
-## Relationship to NSMC Releases
+## Relationship to NSMC Releases and Spark releases
 
 This project contains a branch for each release of NSMC, For example, to use **NSMC** release tagged **v0.4.0**, look at the branch here called **depends-v0.4.0**.
 
+| Branch of this project | NSMC Release | Apache Spark Release | Scala Version | 
+-------------------------|--------------|----------------------|---------------|
+| depends-v0.5.0 / master| 0.5.0 | 1.3.0 | 2.10 |
+| depends-v0.4.1 | 0.4.1 | 1.2.0 | 2.10 |
+| depends-v0.4.0 | 0.4.0 | 1.2.0 | 2.10 |
+| depends-v0.3.0 | 0.3.0 | 1.1.0 | 2.10 |
