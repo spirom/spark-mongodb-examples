@@ -8,7 +8,7 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "1.2.0"
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "1.2.0"
 
-libraryDependencies += "com.github.spirom" %% "spark-mongodb-connector" % "0.4.0"
+libraryDependencies += "com.github.spirom" %% "spark-mongodb-connector" % "0.4.1"
 
 lazy val demo = taskKey[Unit]("Populates a collection and runs queriess")
 
