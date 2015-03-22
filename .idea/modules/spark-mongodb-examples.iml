@@ -171,5 +171,6 @@
     <orderEntry type="library" name="SBT: commons-net:commons-net:3.1:jar" level="project" />
     <orderEntry type="library" name="SBT: org.scala-lang:scalap:2.10.4:jar" level="project" />
     <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.github.spirom:spark-mongodb-connector_2.10:0.4.1:jar" level="project" />
   </component>
 </module>
