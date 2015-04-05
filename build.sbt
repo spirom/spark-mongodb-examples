@@ -12,8 +12,10 @@ libraryDependencies += "com.github.spirom" %% "spark-mongodb-connector" % "0.5.0
 
 lazy val demo = taskKey[Unit]("Populates a collection and runs queriess")
 
+fork in (Compile, run) := true
+
 demo := {
-  (runMain in Compile).toTask(" PopulateTestCollection").value
-  (runMain in Compile).toTask(" BasicQuery").value
-  (runMain in Compile).toTask(" SQLQuery").value
+  (runMain in Compile).toTask(" DemoSequence").value
 }
+
+mainClass in (Compile, run) := Some("DemoSequence")
