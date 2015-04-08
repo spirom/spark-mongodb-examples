@@ -23,7 +23,7 @@ The examples are not intended to run "locally": you need to submit the generated
           --master <your Spark master URL>  \
           <path to your git projects>/spark-mongodb-examples/target/scala-2.10/spark-mongodb-examples-assembly-1.0.jar 
 
-The above command runs the entire demo sequence. YOu can also use the `--class` option to specify individual demo components `PopulateTestCollection` (run it first), `BasicQuery` or `SQLQuery`.  
+The above command runs the entire demo sequence. You can also use the `--class` option to specify individual demo components `PopulateTestCollection` (run it first), `BasicQuery` or `SQLQuery`.  
 
 ## Relationship to NSMC Releases and Spark releases
 
