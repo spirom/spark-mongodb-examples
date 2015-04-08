@@ -7,7 +7,7 @@ object SQLQuery {
     DBConfig.printConfig()
     val coreConf =
       new SparkConf()
-        .setAppName("MongoReader").setMaster("local[4]")
+        .setAppName("SQLQuery")
         .set("nsmc.connection.host", DBConfig.host)
         .set("nsmc.connection.port", DBConfig.port)
     // if a username AND password are defined, use them

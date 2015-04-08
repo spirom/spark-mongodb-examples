@@ -10,7 +10,7 @@ object BasicQuery {
     DBConfig.printConfig()
     val coreConf =
       new SparkConf()
-        .setAppName("MongoReader").setMaster("local[4]")
+        .setAppName("BasicQuery")
         .set("nsmc.connection.host", DBConfig.host)
         .set("nsmc.connection.port", DBConfig.port)
     // if a username AND password are defined, use them
@@ -24,14 +24,16 @@ object BasicQuery {
 
       val data = sc.mongoCollection[DBObject](DBConfig.testDatabase, DBConfig.testCollection)
 
-      data.foreach(dbo => {
+      println(s"****** Obtained ${data.count} records")
+
+      data.collect().foreach(dbo => {
         // may be more convenient to wrap the DBObject in a MongoDBObject for easier access
         // (but not strictly necessary)
         val mdbo = new MongoDBObject(dbo)
-        println("custid = " + mdbo.getAs[String]("custid") + " #orders = " + dbo.getAs[Seq[MongoDBObject]]("orders").map(_.size))
+        println(s"****** custid = ${mdbo.getAs[String]("custid")} #orders = ${dbo.getAs[Seq[MongoDBObject]]("orders").map(_.size)}")
       })
 
-      println("done")
+      println("****** done")
     } finally {
       sc.stop()
     }
