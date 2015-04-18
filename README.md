@@ -27,11 +27,12 @@ The above command runs the entire demo sequence. You can also use the `--class` 
 
 ## Relationship to NSMC Releases and Spark releases
 
-This project contains a branch for each release of NSMC, For example, to use **NSMC** release tagged **v0.4.0**, look at the branch here called **depends-v0.4.0**.
+This project contains a branch for each release of NSMC, For example, to use **NSMC** release tagged **v0.5.2**, look at the branch here called **depends-v0.5.2**.
 
 | Branch of this project | NSMC Release | Apache Spark Release | Scala Version | 
 -------------------------|--------------|----------------------|---------------|
-| depends-v0.5.1 / master| 0.5.1 | 1.3.0 | 2.10 |
+| depends-v0.5.2 / master| 0.5.2 | 1.3.0 | 2.10 |
+| depends-v0.5.1 | 0.5.1 | 1.3.0 | 2.10 |
 | depends-v0.5.0 | 0.5.0 | 1.3.0 | 2.10 |
 | depends-v0.4.1 | 0.4.1 | 1.2.0 | 2.10 |
 | depends-v0.4.0 | 0.4.0 | 1.2.0 | 2.10 |
