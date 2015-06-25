@@ -31,7 +31,8 @@ This project contains a branch for each release of NSMC, For example, to use **N
 
 | Branch of this project | NSMC Release | Apache Spark Release | Scala Version | 
 -------------------------|--------------|----------------------|---------------|
-| depends-v0.5.2 / master| 0.5.2 | 1.3.0 | 2.10 |
+| depends-v0.5.3 / master| 0.5.3 | 1.4.0 | 2.10 |
+| depends-v0.5.2 | 0.5.2 | 1.3.0 | 2.10 |
 | depends-v0.5.1 | 0.5.1 | 1.3.0 | 2.10 |
 | depends-v0.5.0 | 0.5.0 | 1.3.0 | 2.10 |
 | depends-v0.4.1 | 0.4.1 | 1.2.0 | 2.10 |
